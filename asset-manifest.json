@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/rkant225/react_redux_setup/static/css/main.6bcb0103.chunk.css",
+    "main.js": "/rkant225/react_redux_setup/static/js/main.42d5da13.chunk.js",
+    "main.js.map": "/rkant225/react_redux_setup/static/js/main.42d5da13.chunk.js.map",
+    "runtime-main.js": "/rkant225/react_redux_setup/static/js/runtime-main.71043373.js",
+    "runtime-main.js.map": "/rkant225/react_redux_setup/static/js/runtime-main.71043373.js.map",
+    "static/js/2.2e0a4f74.chunk.js": "/rkant225/react_redux_setup/static/js/2.2e0a4f74.chunk.js",
+    "static/js/2.2e0a4f74.chunk.js.map": "/rkant225/react_redux_setup/static/js/2.2e0a4f74.chunk.js.map",
+    "index.html": "/rkant225/react_redux_setup/index.html",
+    "static/css/main.6bcb0103.chunk.css.map": "/rkant225/react_redux_setup/static/css/main.6bcb0103.chunk.css.map",
+    "static/js/2.2e0a4f74.chunk.js.LICENSE.txt": "/rkant225/react_redux_setup/static/js/2.2e0a4f74.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/rkant225/react_redux_setup/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71043373.js",
+    "static/js/2.2e0a4f74.chunk.js",
+    "static/css/main.6bcb0103.chunk.css",
+    "static/js/main.42d5da13.chunk.js"
+  ]
+}
