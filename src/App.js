@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Loader from './Components/Loader/Loader';
+import ReactDefaultPage from './Components/ReactDefaultPage';
+import ReduxCounter from './Components/ReduxCounter/ReduxCounter';
+import ReduxUser from './Components/ReduxUser/ReduxUser';
+import SimpleCounter from './Components/SimpleCounter/SimpleCounter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Loader/>
+      {/* <ReactDefaultPage/> */}
+      <SimpleCounter/>
+      <ReduxCounter/>
+      <ReduxUser/>
     </div>
   );
 }

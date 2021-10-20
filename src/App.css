@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -11,6 +16,17 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+button{
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+span{
+  font-size: 1.5rem;
 }
 
 .App-header {
