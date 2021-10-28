@@ -3,6 +3,7 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 import {startLoading, stopLoading} from './loaderSlice';
+import {updateToaster} from './toasterSlice';
 
 const initialState = {
     users : []
@@ -12,14 +13,28 @@ const initialState = {
 export const fetchRandomUsers = createAsyncThunk(
     'users/fetchRandomUsers', 
     async (nUsers, thunkAPI)=>{
-
-        const URL = `https://randomuser.me/api/?results=${nUsers || 1}`
-
         thunkAPI.dispatch(startLoading());
-        const response = await axios.get(URL);
-        thunkAPI.dispatch(stopLoading());
+        try{
+            if(nUsers > 0){
+
+                const URL = `https://randomuser.me/api/?results=${nUsers || 1}`
+    
+                const response = await axios.get(URL);
+                console.log('response', response)
+                thunkAPI.dispatch(stopLoading());
+                thunkAPI.dispatch(updateToaster({isError : false, message : "Data fetched successfully."}));
+                
+                return response?.data?.results || [];
+            } else {
+                thunkAPI.dispatch(updateToaster({isError : true, message : "Number of users must be greater than 0."}));
+                thunkAPI.dispatch(stopLoading());
+            }
+        } catch(e){
+            console.log(e);
+            thunkAPI.dispatch(stopLoading());
+            thunkAPI.dispatch(updateToaster({isError : true, message : "Something went wrong please try again."}));
+        }
         
-        return response.data.results;
     }
 );
 
@@ -31,13 +46,13 @@ const usersSlice = createSlice({
 
     },
     extraReducers : {
-        [fetchRandomUsers.pending] : (state, action, globalState)=>{
+        [fetchRandomUsers.pending] : (state, action)=>{
             
         },
-        [fetchRandomUsers.fulfilled] : (state, action, globalState)=>{
+        [fetchRandomUsers.fulfilled] : (state, action)=>{
             state.users = action.payload;
         },
-        [fetchRandomUsers.rejected] : (state, action, globalState)=>{
+        [fetchRandomUsers.rejected] : (state, action)=>{
             
         },
     }
