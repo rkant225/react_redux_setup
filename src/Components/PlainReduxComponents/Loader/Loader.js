@@ -6,7 +6,7 @@ const Loader = (props) => {
     return (
         <>
             {isLoading &&
-                <div style={{height : '100vh', width : '100vw', display : 'flex', justifyContent : 'center', alignItems : 'center', position : 'absolute', backgroundColor : 'rgba(50,50,50,.8)', color : 'white'}}>
+                <div style={{top : '0', bottom : '0', right : '0' , left : '0', display : 'flex', justifyContent : 'center', alignItems : 'center', position : 'fixed', backgroundColor : 'rgba(50,50,50,.8)', color : 'white'}}>
                     Loading...
                 </div>
             }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../../Redux/User/userActions'
+import { fetchUser } from '../../../Redux/User/userActions'
 
 const ReduxUser = (props) => {
     console.log(props);

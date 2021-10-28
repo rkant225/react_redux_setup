@@ -19,9 +19,9 @@
 }
 
 button{
-  margin: 1rem;
-  padding: 1rem;
-  font-size: 1.5rem;
+  margin: .3rem;
+  padding: .5rem;
+  /* font-size: 1.5rem; */
   cursor: pointer;
 }
 
@@ -29,6 +29,11 @@ span{
   font-size: 1.5rem;
 }
 
+input{
+  padding: .3rem;
+  outline: none;
+  font-size: 1.2rem;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

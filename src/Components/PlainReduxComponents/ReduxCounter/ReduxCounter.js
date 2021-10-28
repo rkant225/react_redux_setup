@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import { decreaseCounter, increaseCounter } from '../../Redux/Counter/counterActions';
+import { decreaseCounter, increaseCounter } from '../../../Redux/Counter/counterActions';
 
 const ReduxCounter = (props) => {
     const {countModel, decreaseCounter, increaseCounter } = props;
