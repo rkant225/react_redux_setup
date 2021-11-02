@@ -4,6 +4,7 @@ import activeCustomersReducer from './Slices/activeCustomersSlice';
 import usersReducer from './Slices/usersSlice';
 import loaderReducer from './Slices/loaderSlice';
 import toasterReducer from './Slices/toasterSlice';
+import postsReducer from './Slices/postsSlice';
 
 const store = configureStore({
     reducer : {
@@ -11,8 +12,13 @@ const store = configureStore({
         activeCustomers : activeCustomersReducer,
         users : usersReducer,
         loaderModel : loaderReducer,
-        toasterModel : toasterReducer
+        toasterModel : toasterReducer,
+        postsModel : postsReducer
     }
 });
+
+console.log('STORE', store);
+
+export const {dispatch} = store;
 
 export default store;

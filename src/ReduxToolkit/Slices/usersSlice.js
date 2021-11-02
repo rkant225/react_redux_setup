@@ -1,42 +1,32 @@
-//
-
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import axios from 'axios';
-import {startLoading, stopLoading} from './loaderSlice';
-import {updateToaster} from './toasterSlice';
+
+import callAPI from '../API/callAPI';
 
 const initialState = {
     users : []
 }
 
 
-export const fetchRandomUsers = createAsyncThunk(
-    'users/fetchRandomUsers', 
-    async (nUsers, thunkAPI)=>{
-        thunkAPI.dispatch(startLoading());
-        try{
-            if(nUsers > 0){
+export const fetchRandomUsers = createAsyncThunk( 'users/fetchRandomUsers',  async (nUsers, thunkAPI)=>{
 
-                const URL = `https://randomuser.me/api/?results=${nUsers || 1}`
-    
-                const response = await axios.get(URL);
-                console.log('response', response)
-                thunkAPI.dispatch(stopLoading());
-                thunkAPI.dispatch(updateToaster({isError : false, message : "Data fetched successfully."}));
-                
-                return response?.data?.results || [];
-            } else {
-                thunkAPI.dispatch(updateToaster({isError : true, message : "Number of users must be greater than 0."}));
-                thunkAPI.dispatch(stopLoading());
-            }
-        } catch(e){
-            console.log(e);
-            thunkAPI.dispatch(stopLoading());
-            thunkAPI.dispatch(updateToaster({isError : true, message : "Something went wrong please try again."}));
-        }
-        
+    const URL = `https://randomuser.me/api/?results=${nUsers || 1}`
+
+    const uiLoaderAndToastMessageConfig = {
+        thunkAPI : thunkAPI,
+        message : "Users fetched successfully.",
+        displayAsError : false
+    };
+
+    const requestConfig = {
+        method : 'GET',
+        baseURL : '',
+        url : URL,
+        data : {}
     }
-);
+
+    const response = await callAPI(requestConfig, uiLoaderAndToastMessageConfig);
+    return response.results;
+});
 
 
 const usersSlice = createSlice({
@@ -46,15 +36,9 @@ const usersSlice = createSlice({
 
     },
     extraReducers : {
-        [fetchRandomUsers.pending] : (state, action)=>{
-            
-        },
         [fetchRandomUsers.fulfilled] : (state, action)=>{
             state.users = action.payload;
-        },
-        [fetchRandomUsers.rejected] : (state, action)=>{
-            
-        },
+        }
     }
 })
 

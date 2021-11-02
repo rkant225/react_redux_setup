@@ -3,17 +3,21 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
     isError : false,
     message : "",
-    changeId : Math.random()
+    changeId : Math.random() // This is to give unique ID when ever user dispatch any of the below actions.
 }
 
 const toasterSlice = createSlice({
     name : 'loader',
     initialState : initialState,
     reducers : {
-        updateToaster : (state, action)=>{
-            const {isError, message} = action.payload;
-            state.isError = isError;
-            state.message = message;
+        toastErrorMessage : (state, action)=>{
+            state.isError = true;
+            state.message = action.payload;
+            state.changeId = Math.random();
+        },
+        toastSuccessMessage : (state, action)=>{
+            state.isError = false;
+            state.message = action.payload;
             state.changeId = Math.random();
         }
     }
@@ -21,7 +25,7 @@ const toasterSlice = createSlice({
 
 
 // Action Creators
-export const { updateToaster } = toasterSlice.actions;
+export const { toastErrorMessage, toastSuccessMessage } = toasterSlice.actions;
 
 // Reducer
 export default toasterSlice.reducer;

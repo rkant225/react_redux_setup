@@ -3,14 +3,16 @@ import LoaderReduxToolkit from './Components/ReduxTollKitComponents/LoaderReduxT
 import FoodCourt from './Components/ReduxTollKitComponents/FoodCourt/FoodCourt';
 import RandomUser from './Components/ReduxTollKitComponents/RandomUser/RandomUser';
 import ToastSnackBar from './Components/ReduxTollKitComponents/ToastSnackBar/ToastSnackBar';
+import Posts from './Components/ReduxTollKitComponents/Posts/Posts';
 
 function AppReduxToolkit() {
   return (
     <div>
       <ToastSnackBar/>
       <LoaderReduxToolkit/>
-      <FoodCourt/>
+      {/* <FoodCourt/> */}
       <RandomUser/>
+      <Posts/>
     </div>
   );
 }
