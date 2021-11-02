@@ -4,7 +4,7 @@ const Post = (props) => {
     const {title, body} = props;
 
     return (
-        <div style={{width : '350px', margin : '.5rem', border : '1px solid black', borderRadius : '.5rem', padding : '.3rem', cursor : 'pointer', backgroundColor : 'wheat'}}>
+        <div className="post-card-container">
             <div>
                 <b>{title}</b>
             </div>

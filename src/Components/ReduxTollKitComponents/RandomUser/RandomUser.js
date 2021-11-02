@@ -19,7 +19,7 @@ const RandomUser = () => {
             <div style={{display : 'flex', flexWrap : 'wrap'}}>
                 {users?.map((user)=>{
                     return(
-                        <img key={user.email} src={user.picture.large} alt={user.email} style={{height : '200px', width : '200px', margin : '.5rem', borderRadius : '50%'}}/>
+                        <img key={user.email} src={user.picture.large} alt={user.email} className="user-profile-pic"/>
                     );
                 })}
             </div>

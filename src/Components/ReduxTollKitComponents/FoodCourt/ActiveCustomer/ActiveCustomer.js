@@ -46,9 +46,9 @@ const ActiveCustomer = () => {
                                 <div style={{color : 'green', fontWeight : '900', cursor : 'pointer'}} onClick={()=>{markReservationCompletedAndDelete(activeCustomer.reservationId)}}>Complete Order | ₹{getOrderTotal(activeCustomer.foodOrders)}</div>
                             </div>
 
-                            <div style={{display : 'flex', justifyContent : 'space-between'}}>
+                            <div style={{display : 'flex', justifyContent : 'space-between', flexWrap : 'wrap'}}>
 
-                                <div>
+                                <div style={{width : '100%'}}>
                                     <div style={{display : 'flex', flexWrap : 'wrap'}}>
                                         {activeCustomer.foodOrders.map((foodOrder)=>{
                                             ordetTotal = ordetTotal + foodOrder.price;
@@ -61,14 +61,15 @@ const ActiveCustomer = () => {
                                     </div>
                                 </div>
 
-                                <div>
+                                <div style={{width : '100%'}}>
                                     <form id={`add-order-form-${activeCustomer.reservationId}`} onSubmit={(e)=>{handleAddFoodFormSubmission(e, activeCustomer.reservationId)}}>
                                         <div style={{textAlign : '-webkit-right'}}>
                                             <div style={{marginTop : '.3rem', padding : '.5rem', borderRadius : '.5rem', width : 'max-content'}}>
                                                 <label>Order Details</label>
                                                 <br/>
                                                 <input required name="food" type="text"/>
-                                                <input type="submit" value="Add Order"/>
+                                                <br/>
+                                                <input style={{marginTop : '.5rem'}} type="submit" value="Add Order"/>
                                             </div>
                                         </div>
                                     </form>

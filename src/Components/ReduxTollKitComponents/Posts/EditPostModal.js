@@ -29,7 +29,7 @@ const EditPostModal = (props) => {
 
     return (
         <div style={{position : 'fixed', top : '0', bottom : '0', right : '0', left : '0', display : 'flex', justifyContent : 'center', alignItems : 'center', backgroundColor : 'rgba(70,70,70,.7)'}}>
-            <div style={{minHeight : '100px', width : '30%', backgroundColor : 'white', padding : '1rem', borderRadius : '.5rem'}}>
+            <div className="edit-post-modal-content">
                 <form id="edit-post-form" onSubmit={handleFormSubmission}>
                     <div>
                         <label>Title</label>

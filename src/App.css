@@ -57,3 +57,62 @@ input{
     transform: rotate(360deg);
   }
 }
+
+
+.edit-post-modal-content{
+  min-height: 100px;
+  width: 30%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.post-card-container{
+  width: 350px;
+  margin: .5rem;
+  border: 1px solid black;
+  border-radius: .5rem;
+  padding: .3rem;
+  cursor: pointer;
+  background-color: wheat;
+}
+
+.user-profile-pic{
+  height: 200px;
+  width: 200px;
+  margin: .5rem;
+  border-radius: 2rem;
+}
+
+.reservation-container{
+  padding: 1rem;
+  width: 28%;
+}
+
+.active-customer-container{
+  padding: 1rem;
+  width: 68%;
+}
+
+@media (max-width: 650px) {
+  .edit-post-modal-content{
+    width: 80%;
+  }
+
+  .post-card-container{
+    width: 90vw;
+  }
+
+  .user-profile-pic{
+    height: 100px;
+    width: 100px;
+  }
+
+  .reservation-container{
+    width: 90%;
+  }
+
+  .active-customer-container{
+    width: 90%;
+  }
+}

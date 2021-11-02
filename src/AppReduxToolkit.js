@@ -10,7 +10,7 @@ function AppReduxToolkit() {
     <div>
       <ToastSnackBar/>
       <LoaderReduxToolkit/>
-      {/* <FoodCourt/> */}
+      <FoodCourt/>
       <RandomUser/>
       <Posts/>
     </div>

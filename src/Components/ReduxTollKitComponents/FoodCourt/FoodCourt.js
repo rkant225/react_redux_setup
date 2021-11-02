@@ -7,13 +7,13 @@ const FoodCourt = () => {
         <div>
             <h1>Plain Actions (Non-Asynchronous)</h1>
         
-            <div style={{display : 'flex'}}>
+            <div style={{display : 'flex', flexWrap : 'wrap'}}>
                 
-                <div style={{padding : '1rem', borderRight : '1px solid black', width : '30%'}}>
+                <div className="reservation-container">
                     <Reservation/>
                 </div>
 
-                <div style={{padding : '1rem', width : '70%'}}>
+                <div className="active-customer-container">
                     <ActiveCustomer/>
                 </div>
             </div>
